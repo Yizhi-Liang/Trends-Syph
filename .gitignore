@@ -2,3 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
+
+data/natality/
+
+code/2_analysis/year_race_prevalence.rds
