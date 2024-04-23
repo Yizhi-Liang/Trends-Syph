@@ -1,0 +1,165 @@
+﻿Author,Source,Type,Assay,Stage,Sensitivity,True Pos,Actual Pos
+Augenbraun (1998),"Augenbraun, 1998
+Sexually Transmitted Diseases 25(10): 549-552.",manual treponemal,FTA-ABS,primary,0.9920,127,128
+Augenbraun (1998),"Augenbraun, 1998
+Sexually Transmitted Diseases 25(10): 549-552.",manual treponemal,FTA-ABS,secondary,1.0000,243,243
+Augenbraun (1998),"Augenbraun, 1998
+Sexually Transmitted Diseases 25(10): 549-552.",manual treponemal,FTA-ABS,early latent,0.9870,137,139
+Augenbraun (1998),"Augenbraun, 1998
+Sexually Transmitted Diseases 25(10): 549-552.",manual treponemal,MHA-TP,primary,0.8860,113,128
+Augenbraun (1998),"Augenbraun, 1998
+Sexually Transmitted Diseases 25(10): 549-552.",manual treponemal,MHA-TP,secondary,0.9880,240,243
+Augenbraun (1998),"Augenbraun, 1998
+Sexually Transmitted Diseases 25(10): 549-552.",manual treponemal,MHA-TP,early latent,1.0000,139,139
+Byrne (1992),"Byrne, R. E., et al. (1992). Journal of Clinical Microbiology 30(1): 115-122.",manual treponemal,FTA-ABS,primary,0.8890,8,9
+Byrne (1992),"Byrne, R. E., et al. (1992). Journal of Clinical Microbiology 30(1): 115-122.",manual treponemal,FTA-ABS,secondary,1.0000,13,13
+Byrne (1992),"Byrne, R. E., et al. (1992). Journal of Clinical Microbiology 30(1): 115-122.",manual treponemal,FTA-ABS,late latent,0.8300,5,6
+Byrne (1992),"Byrne, R. E., et al. (1992). Journal of Clinical Microbiology 30(1): 115-122.",manual treponemal,FTA-ABS,primary,0.9000,36,40
+Coffey (1972),"Coffey, E. M., et al. (1972). ""Evaluation of the qualitative and automated quantitative microhemagglutination assay for antibodies to Treponema pallidum."" Applied Microbiology 24(1): 26-30.",manual treponemal,FTA-ABS,primary,0.8200,52,63
+Coffey (1972),"Coffey, E. M., et al. (1972). ""Evaluation of the qualitative and automated quantitative microhemagglutination assay for antibodies to Treponema pallidum."" Applied Microbiology 24(1): 26-30.",manual treponemal,FTA-ABS,secondary,1.0000,43,43
+Coffey (1972),"Coffey, E. M., et al. (1972). ""Evaluation of the qualitative and automated quantitative microhemagglutination assay for antibodies to Treponema pallidum."" Applied Microbiology 24(1): 26-30.",manual treponemal,FTA-ABS,early latent,0.9800,52,53
+Coffey (1972),"Coffey, E. M., et al. (1972). ""Evaluation of the qualitative and automated quantitative microhemagglutination assay for antibodies to Treponema pallidum."" Applied Microbiology 24(1): 26-30.",manual treponemal,FTA-ABS,late latent,0.9800,85,87
+Coffey (1972),"Coffey, E. M., et al. (1972). ""Evaluation of the qualitative and automated quantitative microhemagglutination assay for antibodies to Treponema pallidum."" Applied Microbiology 24(1): 26-30.",manual treponemal,MHA-TP,primary,0.6400,40,63
+Coffey (1972),"Coffey, E. M., et al. (1972). ""Evaluation of the qualitative and automated quantitative microhemagglutination assay for antibodies to Treponema pallidum."" Applied Microbiology 24(1): 26-30.",manual treponemal,MHA-TP,secondary,0.9600,41,43
+Coffey (1972),"Coffey, E. M., et al. (1972). ""Evaluation of the qualitative and automated quantitative microhemagglutination assay for antibodies to Treponema pallidum."" Applied Microbiology 24(1): 26-30.",manual treponemal,MHA-TP,early latent,0.9600,51,53
+Coffey (1972),"Coffey, E. M., et al. (1972). ""Evaluation of the qualitative and automated quantitative microhemagglutination assay for antibodies to Treponema pallidum."" Applied Microbiology 24(1): 26-30.",manual treponemal,MHA-TP,late latent,0.9700,84,87
+Farshy (1983),"Farshy, C. E., et al. (1983). Journal of Clinical Microbiology 17(2): 245-248.",manual treponemal,FTA-ABS,primary,0.8000,4,5
+Farshy (1983),"Farshy, C. E., et al. (1983). Journal of Clinical Microbiology 17(2): 245-248.",manual treponemal,FTA-ABS,secondary,1.0000,7,7
+Farshy (1983),"Farshy, C. E., et al. (1983). Journal of Clinical Microbiology 17(2): 245-248.",manual treponemal,FTA-ABS,early latent,1.0000,15,15
+Huber (1983),"Huber, T. W., et al. (1983). Journal of Clinical Microbiology 17(3): 405-409.",manual treponemal,FTA-ABS,primary,0.9820,107,109
+Huber (1983),"Huber, T. W., et al. (1983). Journal of Clinical Microbiology 17(3): 405-409.",manual treponemal,MHA-TP,primary,0.7250,79,109
+Ijsselmuiden (1987),"Ijsselmuiden, O. E., et al. (1987)."" European Journal of Clinical Microbiology 6(3): 281-285.",manual treponemal,FTA-ABS,primary,0.9000,45,50
+Ijsselmuiden (1987),"Ijsselmuiden, O. E., et al. (1987)."" European Journal of Clinical Microbiology 6(3): 281-285.",manual treponemal,FTA-ABS,secondary,1.0000,43,43
+Ijsselmuiden (1987),"Ijsselmuiden, O. E., et al. (1987)."" European Journal of Clinical Microbiology 6(3): 281-285.",manual treponemal,FTA-ABS,early latent,1.0000,47,47
+Ijsselmuiden (1987),"Ijsselmuiden, O. E., et al. (1989).  Journal of Clinical Microbiology 27(1): 152-157.",manual treponemal,FTA-ABS,primary,0.8400,46,55
+Ijsselmuiden (1987),"Ijsselmuiden, O. E., et al. (1989).  Journal of Clinical Microbiology 27(1): 152-157.",manual treponemal,FTA-ABS,secondary,1.0000,39,39
+Ijsselmuiden (1987),"Ijsselmuiden, O. E., et al. (1989).  Journal of Clinical Microbiology 27(1): 152-157.",manual treponemal,FTA-ABS,early latent,1.0000,54,54
+Jaffe (1978),"Jaffe, H. W., et al. (1978). American Journal of Clinical Pathology 70(2): 230-233",manual treponemal,FTA-ABS,primary,1.0000,17,17
+Jaffe (1978),"Jaffe, H. W., et al. (1978). American Journal of Clinical Pathology 70(2): 230-233",manual treponemal,FTA-ABS,secondary,1.0000,23,23
+Jaffe (1978),"Jaffe, H. W., et al. (1978). American Journal of Clinical Pathology 70(2): 230-233",manual treponemal,FTA-ABS,latent,1.0000,27,27
+Jaffe (1978),"Jaffe, H. W., et al. (1978). American Journal of Clinical Pathology 70(2): 230-233",manual treponemal,MHA-TP,primary,0.7640,13,17
+Jaffe (1978),"Jaffe, H. W., et al. (1978). American Journal of Clinical Pathology 70(2): 230-233",manual treponemal,MHA-TP,secondary,1.0000,23,23
+Jaffe (1978),"Jaffe, H. W., et al. (1978). American Journal of Clinical Pathology 70(2): 230-233",manual treponemal,MHA-TP,latent,1.0000,27,27
+Larsen (1981),"Larsen, S. A., et al. (1981) Journal of Clinical Microbiology 14(4): 441-445.",manual treponemal,FTA-ABS,primary,0.9750,77,79
+Larsen (1981),"Larsen, S. A., et al. (1981) Journal of Clinical Microbiology 14(4): 441-445.",manual treponemal,FTA-ABS,secondary,0.9900,88,89
+Larsen (1981),"Larsen, S. A., et al. (1981) Journal of Clinical Microbiology 14(4): 441-445.",manual treponemal,FTA-ABS,latent,1.0000,103,103
+Larsen (1981),"Larsen, S. A., et al. (1981) Journal of Clinical Microbiology 14(4): 441-445.",manual treponemal,MHA-TP,primary,0.8860,70,79
+Larsen (1981),"Larsen, S. A., et al. (1981) Journal of Clinical Microbiology 14(4): 441-445.",manual treponemal,MHA-TP,secondary,1.0000,89,89
+Larsen (1981),"Larsen, S. A., et al. (1981) Journal of Clinical Microbiology 14(4): 441-445.",manual treponemal,MHA-TP,latent,0.9900,102,103
+Lam (2010),"Lam, TK (2010)
+ International Journal of STD & AIDS 21(2): 110-113.",manual treponemal,FTA-ABS,primary,0.8460,33,39
+Lam (2010),"Lam, TK (2010)
+ International Journal of STD & AIDS 21(2): 110-113.",manual treponemal,FTA-ABS,secondary,0.9500,19,20
+Lam (2010),"Lam, TK (2010)
+ International Journal of STD & AIDS 21(2): 110-113.",manual treponemal,FTA-ABS,early latent,0.9440,17,18
+Lam (2010),"Lam, TK (2010)
+ International Journal of STD & AIDS 21(2): 110-113.",manual treponemal,FTA-ABS,latent,0.8450,49,58
+Lam (2010),"Lam, TK (2010)
+ International Journal of STD & AIDS 21(2): 110-113.",manual treponemal,TP-PA,primary,0.9490,37,39
+Lam (2010),"Lam, TK (2010)
+ International Journal of STD & AIDS 21(2): 110-113.",manual treponemal,TP-PA,secondary,1.0000,20,20
+Lam (2010),"Lam, TK (2010)
+ International Journal of STD & AIDS 21(2): 110-113.",manual treponemal,TP-PA,early latent,0.9440,17,18
+Lam (2010),"Lam, TK (2010)
+ International Journal of STD & AIDS 21(2): 110-113.",manual treponemal,TP-PA,latent,0.9140,53,58
+Moyer (1984),"Moyer, N. P., et al. (1984). Journal of Clinical Microbiology 19(6): 849-852.",manual treponemal,FTA-ABS,all,0.9837,121,123
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),manual treponemal,TP-PA,primary,0.9450,52,55
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),manual treponemal,TP-PA,secondary,1.0000,98,98
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),manual treponemal,TP-PA,early latent,1.0000,41,41
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),manual treponemal,TP-PA,late latent,0.8680,59,68
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),manual treponemal,FTA-ABS,primary,0.7820,43,55
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),manual treponemal,FTA-ABS,secondary,0.9280,91,98
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),manual treponemal,FTA-ABS,early latent,1.0000,41,41
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),manual treponemal,FTA-ABS,late latent,0.9260,63,68
+Pope (1982)," Pope, V., et al. (1982). Journal of Clinical Microbiology 15(4): 630-634",manual treponemal,FTA-ABS,primary,1.0000,24,24
+Pope (1982)," Pope, V., et al. (1982). Journal of Clinical Microbiology 15(4): 630-634",manual treponemal,FTA-ABS,secondary,1.0000,20,20
+Pope (1982)," Pope, V., et al. (1982). Journal of Clinical Microbiology 15(4): 630-634",manual treponemal,FTA-ABS,latent,1.0000,35,35
+Pope (1982)," Pope, V., et al. (1982). Journal of Clinical Microbiology 15(4): 630-634",manual treponemal,MHA-TP,primary,0.4583,11,24
+Pope (1982)," Pope, V., et al. (1982). Journal of Clinical Microbiology 15(4): 630-634",manual treponemal,MHA-TP,secondary,0.9000,18,20
+Pope (1982)," Pope, V., et al. (1982). Journal of Clinical Microbiology 15(4): 630-634",manual treponemal,MHA-TP,latent,0.8000,28,35
+Romanowski (1987),"Romanowski, B., et al. (1987).  .""Sexually Transmitted Diseases 14(3): 156-159",manual treponemal,FTA-ABS,all,0.9242,61,66
+Van (1986),"Van Eijk, R. V. W., et al. (1986). Sexually Transmitted Infections 62(6): 367-372.",manual treponemal,FTA-ABS,primary,0.8364,46,55
+Van (1986),"Van Eijk, R. V. W., et al. (1986). Sexually Transmitted Infections 62(6): 367-372.",manual treponemal,FTA-ABS,secondary,1.0000,39,39
+Van (1986),"Van Eijk, R. V. W., et al. (1986). Sexually Transmitted Infections 62(6): 367-372.",manual treponemal,FTA-ABS,latent,0.2593,14,54
+Young (1998),"Young, H., et al. (1998). Journal of Clinical Microbiology 36(4): 913-917.",manual treponemal,FTA-ABS,primary,0.9167,22,24
+Young (1998),"Young, H., et al. (1998). Journal of Clinical Microbiology 36(4): 913-917.",manual treponemal,FTA-ABS,secondary,0.8696,20,23
+Young (1998),"Young, H., et al. (1998). Journal of Clinical Microbiology 36(4): 913-917.",manual treponemal,FTA-ABS,early latent,0.8182,9,11
+Young (1998),"Young, H., et al. (1998). Journal of Clinical Microbiology 36(4): 913-917.",manual treponemal,FTA-ABS,late latent,1.0000,31,31
+Young (1998),"Young, H., et al. (1998). Journal of Clinical Microbiology 36(4): 913-917.",manual treponemal,FTA-ABS,uncertain,0.9286,13,14
+Dyckman (1980),"Dyckman, J. D., et al. (1980). Journal of Clinical Microbiology 12(4): 629-630.",manual treponemal,FTA-ABS,primary,0.9150,119,130
+Dyckman (1980),"Dyckman, J. D., et al. (1980). Journal of Clinical Microbiology 12(4): 629-630.",manual treponemal,MHA-TP,primary,0.8230,107,130
+Bosshard (2013),"Bosshard 2013
+Journal of Infection 67(1): 35-42.",manual treponemal,TP-PA,primary,1.0000,59,59
+Bosshard (2013),"Bosshard 2013
+Journal of Infection 67(1): 35-42.",manual treponemal,TP-PA,secondary,1.0000,66,66
+Bosshard (2013),"Bosshard 2013
+Journal of Infection 67(1): 35-42.",manual treponemal,TP-PA,latent,1.0000,25,25
+Creegan (2007),"Creegan (2007)
+Sex Transm Dis. 2007 Dec;34(12):1016-1018.",manual treponemal,TP-PA,primary,0.8590,78,91
+Cole (2007),"Cole, M. J., et al. (2007). European Journal of Clinical Microbiology & Infectious Diseases 26(10): 705-713.",manual treponemal,TP-PA,all,0.9579,109,114
+Liu (2014),"Liu, C., et al. (2014). Journal of Clinical Laboratory Analysis 28(3): 204-209.",manual treponemal,TP-PA,all,0.9625,154,160
+Manavi (2006),"Manavi, K., et al. (2006). International Journal of STD & AIDS 17(11): 768-771.",manual treponemal,TP-PA,primary,0.9600,48,50
+Manavi (2006),"Manavi, K., et al. (2006). International Journal of STD & AIDS 17(11): 768-771.",manual treponemal,TP-PA,secondary,1.0000,26,26
+Manavi (2006),"Manavi, K., et al. (2006). International Journal of STD & AIDS 17(11): 768-771.",manual treponemal,TP-PA,early latent,1.0000,8,8
+Manavi (2006),"Manavi, K., et al. (2006). International Journal of STD & AIDS 17(11): 768-771.",manual treponemal,TP-PA,uncertain,1.0000,21,21
+Pope (2000),"Pope, V., et al. (2000).   Journal of Clinical Microbiology 38(7): 2543-2545",manual treponemal,TP-PA,primary,0.8750,21,24
+Pope (2000),"Pope, V., et al. (2000).   Journal of Clinical Microbiology 38(7): 2543-2545",manual treponemal,TP-PA,secondary,1.0000,50,50
+Pope (2000),"Pope, V., et al. (2000).   Journal of Clinical Microbiology 38(7): 2543-2545",manual treponemal,TP-PA,latent,0.9615,25,26
+Wellinghausen (2011),"Wellinghausen, N. and H. Dietenberger (2011).  Clinical Chemistry & Laboratory Med 49(8): 1375-1377.",manual treponemal,TP-PA,all,1.0000,50,50
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),treponemal immunoassays,ADVIA Centaur,primary,0.9455,52,55
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),treponemal immunoassays,ADVIA Centaur,secondary,1.0000,98,98
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),treponemal immunoassays,ADVIA Centaur,early latent,1.0000,41,41
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),treponemal immunoassays,ADVIA Centaur,late latent,0.9412,64,68
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),treponemal immunoassays,ADVIA Centaur,all,0.9733,255,262
+Liu (2014),"Liu, C., et al. (2014). Journal of Clinical Laboratory Analysis 28(3): 204-209.",treponemal immunoassays,Architect Syphilis,all,1.0000,160,160
+Marangoni (2009),"Marangoni, A., et al. (2009). ""Laboratory Journal of Clinical Laboratory Analysis 23(1): 1-6.",treponemal immunoassays,Architect Syphilis,all,0.9918,242,244
+Saral (2012),"Saral, Y., et al. (2012). Acta Dermatovenerologica Croatica 20(2): 84-88.",treponemal immunoassays,Architect Syphilis,all,0.9800,110,112
+Wellinghausen (2011),"Wellinghausen, N. and H. Dietenberger (2011).  Clinical Chemistry & Laboratory Med 49(8): 1375-1377.",treponemal immunoassays,Architect Syphilis,all,1.0000,17,17
+Xia (2018),"XIA C. J Infect Chemother (2018), https://doi.org/10.1016/j.jiac.2018.07.017",treponemal immunoassays,Architect Syphilis,all,1.0000,57,57
+Xu (2016),"Xu, M., et al. (2016).  International Journal of Infectious Diseases 43: 51-57.",treponemal immunoassays,Architect Syphilis,primary,0.9091,10,11
+Xu (2016),"Xu, M., et al. (2016).  International Journal of Infectious Diseases 43: 51-57.",treponemal immunoassays,Architect Syphilis,secondary,1.0000,35,35
+Xu (2016),"Xu, M., et al. (2016).  International Journal of Infectious Diseases 43: 51-57.",treponemal immunoassays,Architect Syphilis,early latent,1.0000,28,28
+Xu (2016),"Xu, M., et al. (2016).  International Journal of Infectious Diseases 43: 51-57.",treponemal immunoassays,Architect Syphilis,late latent,0.9762,123,126
+Xu (2016),"Xu, M., et al. (2016).  International Journal of Infectious Diseases 43: 51-57.",treponemal immunoassays,Architect Syphilis,tertiary,0.9464,53,56
+Xu (2016),"Xu, M., et al. (2016).  International Journal of Infectious Diseases 43: 51-57.",treponemal immunoassays,Architect Syphilis,all,0.9727,249,256
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),treponemal immunoassays,Bioplex 2200 Syphilis IgG,primary,0.9636,53,55
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),treponemal immunoassays,Bioplex 2200 Syphilis IgG,secondary,1.0000,98,98
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),treponemal immunoassays,Bioplex 2200 Syphilis IgG,early latent,0.9512,39,41
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),treponemal immunoassays,Bioplex 2200 Syphilis IgG,late latent,0.9412,64,68
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),treponemal immunoassays,Bioplex 2200 Syphilis IgG,all,0.9924,262,264
+Cole (2007),"Cole, M. J., et al. (2007). European Journal of Clinical Microbiology & Infectious Diseases 26(10): 705-713.",treponemal immunoassays,Captia Syphilis-G Assay,primary,0.8485,28,33
+Cole (2007),"Cole, M. J., et al. (2007). European Journal of Clinical Microbiology & Infectious Diseases 26(10): 705-713.",treponemal immunoassays,Captia Syphilis-G Assay,secondary,0.9737,37,38
+Cole (2007),"Cole, M. J., et al. (2007). European Journal of Clinical Microbiology & Infectious Diseases 26(10): 705-713.",treponemal immunoassays,Captia Syphilis-G Assay,early latent,1.0000,15,15
+Cole (2007),"Cole, M. J., et al. (2007). European Journal of Clinical Microbiology & Infectious Diseases 26(10): 705-713.",treponemal immunoassays,Captia Syphilis-G Assay,late latent,1.0000,4,4
+Cole (2007),"Cole, M. J., et al. (2007). European Journal of Clinical Microbiology & Infectious Diseases 26(10): 705-713.",treponemal immunoassays,Captia Syphilis-G Assay,all,0.9333,84,90
+Lefevre (1990),"Lefevre, J. C., et al. (1990). Journal of Clinical Microbiology 28(8): 1704-1707.",treponemal immunoassays,Captia Syphilis-G Assay,primary,0.8235,14,17
+Lefevre (1990),"Lefevre, J. C., et al. (1990). Journal of Clinical Microbiology 28(8): 1704-1707.",treponemal immunoassays,Captia Syphilis-G Assay,secondary,1.0000,13,13
+Lefevre (1990),"Lefevre, J. C., et al. (1990). Journal of Clinical Microbiology 28(8): 1704-1707.",treponemal immunoassays,Captia Syphilis-G Assay,early latent,1.0000,14,14
+Lefevre (1990),"Lefevre, J. C., et al. (1990). Journal of Clinical Microbiology 28(8): 1704-1707.",treponemal immunoassays,Captia Syphilis-G Assay,late latent,1.0000,33,33
+Lefevre (1990),"Lefevre, J. C., et al. (1990). Journal of Clinical Microbiology 28(8): 1704-1707.",treponemal immunoassays,Captia Syphilis-G Assay,all,1.0000,72,72
+Silletti (1995),R. P. Silletti. Journal of Clinical Microbiology (1995),treponemal immunoassays,Captia Syphilis-G Assay,all,1.0000,46,46
+Young (1998),"Young, H., et al. (1998). Journal of Clinical Microbiology 36(4): 913-917.",treponemal immunoassays,Captia Syphilis-G Assay,primary,0.9583,23,24
+Young (1998),"Young, H., et al. (1998). Journal of Clinical Microbiology 36(4): 913-917.",treponemal immunoassays,Captia Syphilis-G Assay,secondary,0.9130,21,23
+Young (1998),"Young, H., et al. (1998). Journal of Clinical Microbiology 36(4): 913-917.",treponemal immunoassays,Captia Syphilis-G Assay,early latent,1.0000,11,11
+Young (1998),"Young, H., et al. (1998). Journal of Clinical Microbiology 36(4): 913-917.",treponemal immunoassays,Captia Syphilis-G Assay,late latent,1.0000,31,31
+Young (1998),"Young, H., et al. (1998). Journal of Clinical Microbiology 36(4): 913-917.",treponemal immunoassays,Captia Syphilis-G Assay,all,0.9524,100,105
+Xia (2018),"XIA C. J Infect Chemother (2018), https://doi.org/10.1016/j.jiac.2018.07.017",treponemal immunoassays,Elecsys Syphilis,all,1.0000,57,57
+Marangoni (2005),"Marangoni (2005)
+"" Clinical & Diagnostic Laboratory Immunology 12(10): 1231-1234.",treponemal immunoassays,LIAISON,primary,1.0000,7,7
+Marangoni (2005),"Marangoni (2005)
+"" Clinical & Diagnostic Laboratory Immunology 12(10): 1231-1234.",treponemal immunoassays,LIAISON,secondary,1.0000,31,31
+Marangoni (2005),"Marangoni (2005)
+"" Clinical & Diagnostic Laboratory Immunology 12(10): 1231-1234.",treponemal immunoassays,LIAISON,latent,0.9870,76,77
+Marangoni (2005),"Marangoni (2005)
+"" Clinical & Diagnostic Laboratory Immunology 12(10): 1231-1234.",treponemal immunoassays,LIAISON,all,0.9924,130,131
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),treponemal immunoassays,LIAISON,primary,0.9640,53,55
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),treponemal immunoassays,LIAISON,secondary,1.0000,98,98
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),treponemal immunoassays,LIAISON,early latent,0.9760,40,41
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),treponemal immunoassays,LIAISON,late latent,0.9260,63,68
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),treponemal immunoassays,LIAISON,all,0.9690,254,262
+Wellinghausen (2011),"Wellinghausen, N. and H. Dietenberger (2011).  Clinical Chemistry & Laboratory Med 49(8): 1375-1377.",treponemal immunoassays,LIAISON,all,1.0000,18,18
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),treponemal immunoassays,Trep-Sure,primary,0.9455,52,55
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),treponemal immunoassays,Trep-Sure,secondary,1.0000,98,98
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),treponemal immunoassays,Trep-Sure,early latent,1.0000,41,41
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),treponemal immunoassays,Trep-Sure,late latent,0.9853,67,68
+Park (2019),I. U. Park et al. Clinical Infectious Diseases(2019),treponemal immunoassays,Trep-Sure,all,0.9847,258,262

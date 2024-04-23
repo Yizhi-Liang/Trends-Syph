@@ -1,0 +1,1 @@
+Syphilis diagnoses were derived from the [Sexually Transmitted Infections Surveillance, 2022](https://www.cdc.gov/std/statistics/2022/default.htm), and [CDC Atlas Plus platform](https://www.cdc.gov/nchhstp/atlas/index.htm), assessed on Feb 27, 2024.
