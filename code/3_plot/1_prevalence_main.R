@@ -236,6 +236,77 @@ ggsave(
   dpi = 1200
 )
 
+syph_diag_yr_race |>
+  group_by(year, race) |>
+  summarise(cases = sum(cases),
+            denominator = sum(denominator)) |>
+  mutate(syph_diag_rate = ifelse(denominator == 0, 0, cases / denominator)) |>
+  ungroup() |>
+  left_join(positive_rate, by = c("year", "race")) |>
+  select(year, race, syph_diag_rate, positivity_rate) |>
+  left_join(
+    fit_yr_race |>
+      group_by(year, race) |>
+      summarise(
+        mean = mean(P),
+        lower = quantile(P, probs = 0.025),
+        upper = quantile(P, probs = 0.975)
+      ) |>
+      ungroup(),
+    by = c("year", "race")
+  ) |>
+  mutate(
+    syph_diag_rate = syph_diag_rate * 100000,
+    positivity_rate = positivity_rate * 100000,
+    mean = mean * 100000,
+    lower = lower * 100000,
+    upper = upper * 100000
+  ) |>
+  ggplot(aes(x = year)) +
+  geom_point(aes(y = syph_diag_rate, color = "Diagnoses")) +
+  geom_point(aes(y = positivity_rate, color = "Positivities")) +
+  geom_point(aes(y = mean, color = "Estimated Prevalance")) +
+  geom_linerange(aes(ymin = lower, ymax = upper, color = "Estimated Prevalance"),
+                 linewidth = 0.5) +
+  scale_color_manual(
+    values = c(
+      "Diagnoses" = "#0073b5",
+      "Positivities" = "#e28726",
+      "Estimated Prevalance" = "#bc3d29"
+    )
+  ) +
+  facet_wrap(~ race, scales = "free") +
+  theme_bw() +
+  scale_y_continuous(labels = scales::label_number(1)) +
+  labs(x = "Year",
+       y = "Cases per 100,000 women",
+       color = NULL) +
+  theme(
+    legend.position = "bottom",
+    strip.background = element_rect(color = "#595959",
+                                    fill = NA),
+    axis.text.x = element_text(size = 10),
+    axis.text.y = element_text(size = 10),
+    axis.title.x = element_text(size = 18),
+    axis.title.y = element_text(size = 18),
+    strip.text = element_text(size = 16),
+    legend.text = element_text(size = 14)
+  ) +
+  guides(color = guide_legend(nrow = 1, byrow = TRUE))
+
+ggsave(
+  plot = last_plot(),
+  filename = here(
+    "output",
+    "figure",
+    "est_prevalence",
+    "2_general_compare_nolog_main.pdf"
+  ),
+  width = 12,
+  height = 9,
+  dpi = 1200
+)
+
 # 3 compare with diagnoses among pregnant women by year -----------------------------------------------------------
 
 syph_pregnant <- import(here("data", "surveillance",
@@ -350,6 +421,161 @@ ggsave(
   height = 9,
   dpi = 1200
 )
+
+syph_pregnant |>
+  left_join(positivies_pregnant_yr, by = 'year') |>
+  left_join(P_pregnant_yr,
+            by = "year") |>
+  mutate(
+    syph_diag_rate = diag_rate * 100000,
+    positivity_rate = pos_rate * 100000,
+    mean = P_mean * 100000,
+    lower = P_lower * 100000,
+    upper = P_upper * 100000
+  ) |>
+  ggplot(aes(x = year)) +
+  geom_point(aes(y = syph_diag_rate, color = "Diagnoses")) +
+  geom_line(aes(y = syph_diag_rate, color = "Diagnoses", group = 1)) +
+  geom_point(aes(y = positivity_rate, color = "Positivities")) +
+  geom_line(aes(y = positivity_rate, color = "Positivities", group = 1)) +
+  geom_point(aes(y = mean, color = "Estimated Prevalance")) +
+  geom_line(aes(y = mean, color = "Estimated Prevalance", group = 1)) +
+  geom_linerange(aes(ymin = lower, ymax = upper, color = "Estimated Prevalance"),
+                 linewidth = 0.5) +
+  scale_color_manual(
+    values = c(
+      "Diagnoses" = "#0073b5",
+      "Positivities" = "#e28726",
+      "Estimated Prevalance" = "#bc3d29"
+    )
+  ) +
+  theme_bw() +
+  scale_y_continuous(labels = scales::label_number(1)) +
+  labs(x = "Year",
+       y = "Cases per 100,000 women",
+       color = NULL) +
+  theme(
+    legend.position = "bottom",
+    strip.background = element_rect(color = "#595959",
+                                    fill = NA),
+    axis.text.x = element_text(size = 10),
+    axis.text.y = element_text(size = 10),
+    axis.title.x = element_text(size = 18),
+    axis.title.y = element_text(size = 18),
+    strip.text = element_text(size = 16),
+    legend.text = element_text(size = 14)
+  ) +
+  guides(color = guide_legend(nrow = 1, byrow = TRUE))
+
+ggsave(
+  plot = last_plot(),
+  filename = here(
+    "output",
+    "figure",
+    "est_prevalence",
+    "3_pregnant_compare_nolog_main.pdf"
+  ),
+  width = 12,
+  height = 9,
+  dpi = 1200
+)
+
+syph_pregnant |>
+  left_join(positivies_pregnant_yr, by = 'year') |>
+  mutate(
+    syph_diag_rate = diag_rate * 100000,
+    positivity_rate = pos_rate * 100000
+  ) |>
+  ggplot(aes(x = year)) +
+  geom_point(aes(y = syph_diag_rate, color = "Diagnoses")) +
+  geom_line(aes(y = syph_diag_rate, color = "Diagnoses", group = 1)) +
+  geom_point(aes(y = positivity_rate, color = "Positivities")) +
+  geom_line(aes(y = positivity_rate, color = "Positivities", group = 1)) +
+  scale_color_manual(
+    values = c(
+      "Diagnoses" = "#0073b5",
+      "Positivities" = "#e28726"
+    )
+  ) +
+  theme_bw() +
+  scale_y_log10(labels = scales::label_number(1)) +
+  labs(x = "Year",
+       y = "Cases per 100,000 women in log scale",
+       color = NULL) +
+  theme(
+    legend.position = "bottom",
+    strip.background = element_rect(color = "#595959",
+                                    fill = NA),
+    axis.text.x = element_text(size = 10),
+    axis.text.y = element_text(size = 10),
+    axis.title.x = element_text(size = 18),
+    axis.title.y = element_text(size = 18),
+    strip.text = element_text(size = 16),
+    legend.text = element_text(size = 14)
+  ) +
+  guides(color = guide_legend(nrow = 1, byrow = TRUE))
+
+ggsave(
+  plot = last_plot(),
+  filename = here(
+    "output",
+    "figure",
+    "est_prevalence",
+    "3.1_pregnant_compare.pdf"
+  ),
+  width = 12,
+  height = 9,
+  dpi = 1200
+)
+
+syph_pregnant |>
+  left_join(positivies_pregnant_yr, by = 'year') |>
+  mutate(
+    syph_diag_rate = diag_rate * 100000,
+    positivity_rate = pos_rate * 100000
+  ) |>
+  ggplot(aes(x = year)) +
+  geom_point(aes(y = syph_diag_rate, color = "Diagnoses")) +
+  geom_line(aes(y = syph_diag_rate, color = "Diagnoses", group = 1)) +
+  geom_point(aes(y = positivity_rate, color = "Positivities")) +
+  geom_line(aes(y = positivity_rate, color = "Positivities", group = 1)) +
+  scale_color_manual(
+    values = c(
+      "Diagnoses" = "#0073b5",
+      "Positivities" = "#e28726"
+    )
+  ) +
+  theme_bw() +
+  scale_y_continuous(labels = scales::label_number(1)) +
+  labs(x = "Year",
+       y = "Cases per 100,000 women",
+       color = NULL) +
+  theme(
+    legend.position = "bottom",
+    strip.background = element_rect(color = "#595959",
+                                    fill = NA),
+    axis.text.x = element_text(size = 10),
+    axis.text.y = element_text(size = 10),
+    axis.title.x = element_text(size = 18),
+    axis.title.y = element_text(size = 18),
+    strip.text = element_text(size = 16),
+    legend.text = element_text(size = 14)
+  ) +
+  guides(color = guide_legend(nrow = 1, byrow = TRUE))
+
+ggsave(
+  plot = last_plot(),
+  filename = here(
+    "output",
+    "figure",
+    "est_prevalence",
+    "3.1_pregnant_compare_nolog.pdf"
+  ),
+  width = 12,
+  height = 9,
+  dpi = 1200
+)
+
 
 # 4 temporal change with 2014 -------------------------------------------------------------------------------------
 
