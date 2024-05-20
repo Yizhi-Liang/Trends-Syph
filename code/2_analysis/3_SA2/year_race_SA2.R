@@ -56,13 +56,10 @@ pregnancies_yr_race = import(here(
   order_levels(c("year", "race")) |> 
   select(year, race, Pop=births)
 
-
 # 2 fit model -----------------------------------------------------------------------------------------------------
 
 get_fit = function(P_alpha_set = 1, P_beta_set) {
   # 2 Data preparation for Stan -------------------------------------------------------------------------------------
-  
-  confidence_factor = 1
   
   df = positivities_yr_race |> 
     left_join(pregnancies_yr_race, by = c("year", "race")) |> 
@@ -73,15 +70,7 @@ get_fit = function(P_alpha_set = 1, P_beta_set) {
       Spec_alpha = spec$Spec_alpha,
       Spec_beta = spec$Spec_beta,
       P_alpha = P_alpha_set,
-      P_beta = P_beta_set,
-      
-      # apply confidence factor
-      Pop_adj = ifelse(year == "2014" | year == "2015",
-                       round(Pop * confidence_factor),
-                       Pop),
-      Positivities = ifelse(year == "2014" | year == "2015",
-                            round(Positivities * confidence_factor),
-                            Positivities)
+      P_beta = P_beta_set
     )
   
   data_ls = df |> 
@@ -102,7 +91,7 @@ get_fit = function(P_alpha_set = 1, P_beta_set) {
     iter = 12000,
     chains = 4,
     warmup = 8000,
-    control = list(adapt_delta = 0.98, max_treedepth = 12),
+    control = list(adapt_delta = 0.995, max_treedepth = 12),
     seed = 123
   )
   
@@ -114,13 +103,6 @@ get_fit = function(P_alpha_set = 1, P_beta_set) {
       Test[year, race],
       theta[year, race],
       pred_Positivities[year, race]
-    ) |> 
-    mutate(
-      pred_Positivities = ifelse(
-        year == "2014" | year == "2015",
-        round(pred_Positivities / confidence_factor),
-        pred_Positivities
-      )
     ) |> 
     ungroup() |> 
     select(year:P)

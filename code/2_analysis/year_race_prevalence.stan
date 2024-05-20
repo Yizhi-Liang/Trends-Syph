@@ -7,7 +7,6 @@ data {
   int<lower=1, upper=n_race> race[n]; // Array of race for each observation
   int<lower=0> Positivities[n]; // Number of positivities for each observation
   int<lower=0> Pop[n]; // Population for each observation
-  int<lower=0> Pop_adj[n]; // Adjusted Population size
   real<lower=0> Test_alpha[n]; // Prior alpha for proportion tested for each observation
   real<lower=0> Test_beta[n]; // Prior beta for proportion tested for each observation
   real<lower=0> Sens_alpha; // Prior alpha for sensitivity for each observation
@@ -54,7 +53,7 @@ model {
   
   // Likelihood of the observed data given the model
   for (i in 1:n) {
-    Positivities[i] ~ binomial(Pop_adj[i], theta[year[i], race[i]]);
+    Positivities[i] ~ binomial(Pop[i], theta[year[i], race[i]]);
   }
   
 }
@@ -65,7 +64,7 @@ generated quantities {
 
   //  predictions
   for (i in 1:n) {
-    pred_Positivities[year[i], race[i]] = binomial_rng(Pop_adj[i], theta[year[i], race[i]]);
+    pred_Positivities[year[i], race[i]] = binomial_rng(Pop[i], theta[year[i], race[i]]);
   }
 
 }
