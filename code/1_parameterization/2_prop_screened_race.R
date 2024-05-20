@@ -122,6 +122,21 @@ test_prop1 |>
       "3_prop_screened.csv"
   ))
 
+test_prop1 |> 
+  mutate(
+    race = case_when(
+      race == "Non-H White" ~ "White",
+      race == "Non-H Black" ~ "Black",
+      race == "Hispanic" ~ "Hispanic",
+      TRUE ~ "Other"
+    )
+  ) |> 
+  export(here(
+      "data",
+      "parameter",
+      "3_prop_screened_with_other.rds"
+  ))
+
 # 2 sensitivity analysis ------------------------------------------------------------------------------------------
 
 rm(list = ls())
@@ -179,6 +194,7 @@ test_prop_race <- test_prop_yr_race |>
   select(race, lower = pool_test_prop)
 
 pnc_prop_race = births |>
+  # filter(insurance == "medicaid") |> 
   select(year, race, No_PNC) |>
   drop_na() |>
   mutate(pnc = 1 - No_PNC) |>

@@ -14,4 +14,16 @@ syph_yr_race |>
     "parameter",
     "0_positivities.csv"
   ))
-  
+
+import(here("data", "natality", "birth_all_coded.rds")) |> 
+  filter(insurance == "medicaid") |> 
+  drop_na(race) |> 
+  group_by(year, race) |> 
+  count(syph, name = "Positivities") |> 
+  filter(syph == 1) |> 
+  select(-syph) |> 
+  export(here(
+    "data",
+    "parameter",
+    "0_positivities_medicaid.csv"
+  ))

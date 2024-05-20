@@ -11,7 +11,7 @@ pacman::p_load(data.table, here, rio)
 
 ## select variables
 selected_vars <- c(
-  "dob_yy", "mager", "mracehisp",
+  "dob_yy", "mager", "mracehisp", "bfacil",
   "meduc", "precare", "previs", "pay_rec", "dbwt", "oegest_comb",
   "ip_gon", "ip_syph", "ip_chlam", "dplural",
   "ab_anti", "ld_antb", "dmar", "mbstate_rec",
@@ -110,6 +110,18 @@ clean_dat[, insurance := factor(
   levels = c("medicaid", "private", "self", "other")
 )]
 
+## birthplace
+clean_dat[, birthplace := case_when(
+  bfacil == 1 ~ "hospital",
+  bfacil == 2 ~ "freestanding",
+  bfacil == 3 ~ "home_intended",
+  bfacil == 4 ~ "home_notintended",
+  bfacil == 5 ~ "home_unknownintended",
+  bfacil == 6 ~ "clinic_doctor_office",
+  bfacil == 7 ~ "other",
+  .default = NA_character_
+)]
+
 ## plural
 clean_dat[, birth_num :=
             dplyr::case_when(
@@ -200,3 +212,7 @@ pregnancies_yr_race |>
     "4_pregnancies.csv"
   ))
 
+import(here("data", "natality", "birth_all_coded.rds")) |> 
+  filter(insurance == "medicaid") |> 
+  group_by(year) |> 
+  summarise(births = n())
