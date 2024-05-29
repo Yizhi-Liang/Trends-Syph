@@ -1,3 +1,2 @@
-- "1_prevalence_main.R": figure 1 to 7 in the manuscript
-- "2_prevalence_SA1.R": figure 8 in the manuscript
-- "3_prevalence_SA2.R": figure 9 in the manuscript
+- "1_manuscript_plot.R": figure 1 to 4 in the manuscript
+- "2_appendix_plot.R": figure 1 to 3 in the appendix
