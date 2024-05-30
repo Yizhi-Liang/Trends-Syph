@@ -3,7 +3,7 @@ rm(list = ls())
 
 pacman::p_load(tidyverse, ggplot2, here, rio, tidybayes, cowplot)
 
-theme_set(theme_half_open() + panel_border())
+theme_set(theme_half_open())
 source(here("code", "0_functions", "order_levels.R"))
 
 size_fig = 18
@@ -94,7 +94,7 @@ time_trend_diff = P_time_trend_yr_race |>
   facet_wrap(~ race, ncol = 3) +
   scale_y_continuous(labels = scales::label_number(1)) +
   labs(x = "Year",
-       y = "Absolute difference per 100,000 women",
+       y = "Absolute difference per 100,000 live births",
        fill = "Race/Ethnicity") +
   p_theme
 
@@ -151,7 +151,7 @@ time_trend_ratio = P_time_trend_yr_race |>
   scale_y_log10(labels = scales::label_number(1)) +
   labs(x = "Year",
        y = "Prevalence ratio in log scale") +
-  P_theme
+  p_theme
 
 time_trend_ratio
 
@@ -247,7 +247,7 @@ disparity_race_diff = disparity_yr_race |>
   scale_y_continuous(labels = scales::label_number(accuracy = 1)) +
   facet_wrap(~ race, ncol = 3) +
   labs(x = "Year",
-       y = "Absolute difference per 100,000 women",
+       y = "Absolute difference per 100,000 live births",
        fill = "Race/Ethnicity") +
   p_theme
 
@@ -394,8 +394,8 @@ P_yr_race_SA2 = fit_yr_race_SA2 |>
   facet_wrap(~ race, ncol = 3, scales = "free") +
   labs(
     x = "Year",
-    y = "Estimated syphilis prevalence per 100,000 women",
-    shape = NULL
+    y = "Estimated syphilis prevalence per 100,000 live births",
+    shape = "Weakly informative priors for prevalence",
   ) +
   p_theme +
   guides(color = "none",

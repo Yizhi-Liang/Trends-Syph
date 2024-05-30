@@ -1,5 +1,6 @@
 
 
+
 rm(list = ls())
 
 pacman::p_load(tidyverse, ggplot2, here, rio, tidybayes, cowplot)
@@ -188,20 +189,21 @@ pos_compare = positive_rate |>
     upper = upper * 100000
   ) |>
   ggplot(aes(x = year)) +
-  geom_point(aes(y = mean, color = "Estimated Prevalance")) +
-  geom_point(aes(y = positivity_rate, color = "Birth Certificate Positivities")) +
+  geom_point(aes(y = mean, color = "Estimated prevalence")) +
+  geom_point(aes(y = positivity_rate, color = "Birth certificate positivity")) +
   
-  geom_linerange(aes(ymin = lower, ymax = upper, color = "Estimated Prevalance"),
+  geom_linerange(aes(ymin = lower, ymax = upper, color = "Estimated prevalence"),
                  linewidth = 0.5) +
-  geom_line(aes(y = mean, color = "Estimated Prevalance", group = 1)) +
-  geom_line(aes(y = positivity_rate, color = "Birth Certificate Positivities", group = 1)) +
+  geom_line(aes(y = mean, color = "Estimated prevalence", group = 1)) +
+  geom_line(aes(y = positivity_rate, color = "Birth certificate positivity", group = 1)) +
   scale_color_manual(
     values = c(
-      "Estimated Prevalance" = prevalence_color_main,
-      "Birth Certificate Positivities" = positives_color
-    )
+      "Birth certificate positivity" = positives_color,
+      "Estimated prevalence" = prevalence_color_main
+    ),
+    breaks = c("Estimated prevalence", "Birth certificate positivity")
   ) +
-  facet_wrap( ~ race, scales = "free") +
+  facet_wrap(~ race, scales = "free") +
   labs(x = "Year", y = "Cases per 100,000 live births", color = NULL) +
   theme(
     legend.position = "bottom",
@@ -221,6 +223,7 @@ pos_compare = positive_rate |>
     panel.spacing.x = unit(2, "lines"),
     panel.spacing.y = unit(2, "lines")
   ) +
+  # order of the color legend
   guides(color = guide_legend(nrow = 1, byrow = TRUE))
 
 pos_compare
@@ -231,6 +234,7 @@ P_mean_yr <- fit_yr_race |>
   summarise(P_mean = mean(P)) |>
   ungroup()
 
+## index calculation
 index_df <- fit_yr_race |>
   left_join(P_mean_yr, by = "year") |>
   select(year, race, P, .chain, .iteration, wt, P_mean) |>
@@ -244,6 +248,7 @@ index_df <- fit_yr_race |>
   })) |>
   select(year, index)
 
+## index plot
 disparity_index = index_df |>
   group_by(year) |>
   summarise(
@@ -274,7 +279,7 @@ disparity_index = index_df |>
     axis.title.y = element_text(size = size_fig),
     plot.title = element_text(size = size_fig),
     legend.text = element_text(size = size_fig),
-    legend.position = c(0.45, 0.2)
+    legend.position = c(0.45, 0.1)
   ) +
   guides(color = guide_legend(title = NULL))
 
@@ -318,22 +323,28 @@ pregnant_compare = P_pregnant_yr |>
     upper = P_upper * 100000
   ) |>
   ggplot(aes(x = year)) +
-  geom_point(aes(y = syph_diag_rate, color = "Diagnoses among Women of Reproductive Age")) +
-  geom_line(aes(y = syph_diag_rate, color = "Diagnoses among Women of Reproductive Age", group = 1)) +
-  geom_point(aes(y = syph_diag_rate_preg, color = "Diagnoses among Pregnant Women")) +
-  geom_line(aes(y = syph_diag_rate_preg, color = "Diagnoses among Pregnant Women", group = 1)) +
-  geom_point(aes(y = positivity_rate, color = "Birth Certificate Positivities")) +
-  geom_line(aes(y = positivity_rate, color = "Birth Certificate Positivities", group = 1)) +
-  geom_point(aes(y = mean, color = "Estimated Prevalance")) +
-  geom_line(aes(y = mean, color = "Estimated Prevalance", group = 1)) +
-  geom_linerange(aes(ymin = lower, ymax = upper, color = "Estimated Prevalance"),
+  geom_point(aes(y = syph_diag_rate, color = "Diagnoses among women of reproductive age")) +
+  geom_line(aes(y = syph_diag_rate, color = "Diagnoses among women of reproductive age", group = 1)) +
+  geom_point(aes(y = syph_diag_rate_preg, color = "Diagnoses among pregnant women")) +
+  geom_line(aes(y = syph_diag_rate_preg, color = "Diagnoses among pregnant women", group = 1)) +
+  geom_point(aes(y = positivity_rate, color = "Birth certificate positivity")) +
+  geom_line(aes(y = positivity_rate, color = "Birth certificate positivity", group = 1)) +
+  geom_point(aes(y = mean, color = "Estimated prevalence")) +
+  geom_line(aes(y = mean, color = "Estimated prevalence", group = 1)) +
+  geom_linerange(aes(ymin = lower, ymax = upper, color = "Estimated prevalence"),
                  linewidth = 0.5) +
   scale_color_manual(
     values = c(
-      "Diagnoses among Women of Reproductive Age" = "#107c10",
-      "Diagnoses among Pregnant Women" = diagnoses_color,
-      "Birth Certificate Positivities" = positives_color,
-      "Estimated Prevalance" = prevalence_color_main
+      "Diagnoses among women of reproductive age" = "#107c10",
+      "Diagnoses among pregnant women" = diagnoses_color,
+      "Birth certificate positivity" = positives_color,
+      "Estimated prevalence" = prevalence_color_main
+    ),
+    breaks = c(
+      "Estimated prevalence",
+      "Birth certificate positivity",
+      "Diagnoses among pregnant women",
+      "Diagnoses among women of reproductive age"
     )
   ) +
   labs(x = "Year", y = "Cases per 100,000 women", color = NULL) +
@@ -407,8 +418,8 @@ stillbirth_plot = prevalence_yr |>
       "Stillbirths" = "#5c005c"
     ),
     labels = c(
-      "Live births (Estimated)" = "Estimated Prevalence among Women with Live Births",
-      "Stillbirths" = "Estimated Prevalence among Women with Stillbirths"
+      "Live births (Estimated)" = "Estimated prevalence among live births",
+      "Stillbirths" = "Prevalence based on reported stillbirths attributable to congenital syphilis among stillbirths"
     )
   ) +
   guides(color = guide_legend(nrow = 2, byrow = TRUE))
@@ -457,24 +468,24 @@ P_yr_race_manual = P_main_yr_race |>
   bind_rows(P_sa_yr_race, .id = "type") |>
   left_join(positive_rate, by = c("year", "race")) |>
   mutate(across(c(mean:positivity_rate), ~ . * 100000)) |>
-  mutate(type = ifelse(type == 1, "Main Analysis", "Sensitivity Analysis")) |> 
+  mutate(type = ifelse(type == 1, "Main analysis", "Sensitivity analysis")) |>
   ggplot(aes(x = year, color = type)) +
   geom_point(aes(y = mean), position = position_dodge(width = 0.9)) +
-  # geom_line(aes(y = mean, group = type), position = position_dodge(width = 0.9)) +
   geom_linerange(aes(ymin = lower, ymax = upper),
                  linewidth = 0.5,
                  position = position_dodge2(width = 0.9)) +
-  geom_point(aes(y = positivity_rate, color = "Birth Certificate Positivities")) +
+  geom_point(aes(y = positivity_rate, color = "Birth certificate positivity")) +
   scale_y_continuous(limits = c(0, NA)) +
-  facet_wrap( ~ race, ncol = 3, scales = "free") +
+  facet_wrap(~ race, ncol = 3, scales = "free") +
   scale_color_manual(
-    values = c("Main Analysis" = prevalence_color_main, 
-               "Sensitivity Analysis" = prevalence_color_SA,
-               "Birth Certificate Positivities" = positives_color)
+    values = c(
+      "Main analysis" = prevalence_color_main,
+      "Sensitivity analysis" = prevalence_color_SA,
+      "Birth certificate positivity" = positives_color
+    ),
+    breaks = c("Main analysis", "Sensitivity analysis", "Birth certificate positivity")
   ) +
-  labs(x = "Year", 
-       y = "Estimated syphilis prevalence per 100,000 women", 
-       color = NULL) +
+  labs(x = "Year", y = "Estimated syphilis prevalence per 100,000 live births", color = NULL) +
   theme(
     legend.position = "bottom",
     legend.justification = "center",
