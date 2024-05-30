@@ -6,3 +6,9 @@
 data/natality/
 
 code/2_analysis/year_race_prevalence.rds
+
+*.rds
+
+output/figure/est_prevalence/.DS_Store
+
+code/.DS_Store
