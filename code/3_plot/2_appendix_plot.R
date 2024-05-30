@@ -107,11 +107,11 @@ ggsave(
     "figure",
     "est_prevalence",
     "appendix",
-    "1.1_time_trend_diff_main.pdf"
+    "1.1_time_trend_diff_main.tiff"
   ),
   width = 12,
   height = 9,
-  dpi = 1200
+  dpi = 300
 )
 
 time_trend_ratio = P_time_trend_yr_race |>
@@ -162,11 +162,11 @@ ggsave(
     "figure",
     "est_prevalence",
     "appendix",
-    "1.2_time_trend_ratio_main.pdf"
+    "1.2_time_trend_ratio_main.tiff"
   ),
   width = 12,
   height = 9,
-  dpi = 1200
+  dpi = 300
 )
 
 ## plot together
@@ -190,10 +190,10 @@ ggsave(
                   "figure",
                   "est_prevalence",
                   "appendix",
-                  "1_time_trend_main.pdf"),
+                  "1_time_trend_main.tiff"),
   width = 20,
   height = 12,
-  dpi = 1200
+  dpi = 300
 )
 
 
@@ -260,11 +260,11 @@ ggsave(
     "figure",
     "est_prevalence",
     "appendix",
-    "2.1_disparity_diff_main.pdf"
+    "2.1_disparity_diff_main.tiff"
   ),
   width = 16.5,
   height = 12,
-  dpi = 1200
+  dpi = 300
 )
 
 ## ratio
@@ -316,11 +316,11 @@ ggsave(
     "figure",
     "est_prevalence",
     "appendix",
-    "2.2_disparity_ratio_main.pdf"
+    "2.2_disparity_ratio_main.tiff"
   ),
   width = 16.5,
   height = 12,
-  dpi = 1200
+  dpi = 300
 )
 
 ## together
@@ -345,10 +345,10 @@ ggsave(
                   "figure",
                   "est_prevalence",
                   "appendix",
-                  "2_disparity_main.pdf"),
+                  "2_disparity_main.tiff"),
   width = 20,
   height = 12,
-  dpi = 1200
+  dpi = 300
 )
 
 # 3 Sensitivity analysis 2 ----------------------------------------------------------------------------------------
@@ -408,9 +408,9 @@ ggsave(
     "figure",
     "est_prevalence",
     "appendix",
-    "3_prevalence_yr_race_SA2.pdf"
+    "3_prevalence_yr_race_SA2.tiff"
   ),
   width = 4*3.5,
   height = 3*3.5,
-  dpi = 1200
+  dpi = 300
 )

@@ -292,11 +292,11 @@ ggsave(
     "output",
     "figure",
     "est_prevalence",
-    "1_positives_compare_main.pdf"
+    "1_positives_compare_main.tiff"
   ),
   width = 12,
   height = 9,
-  dpi = 1200
+  dpi = 300
 )
 
 
@@ -374,11 +374,11 @@ ggsave(
     "output",
     "figure",
     "est_prevalence",
-    "2_diagnoses_compare_main.pdf"
+    "2_diagnoses_compare_main.tiff"
   ),
   width = 12,
   height = 9,
-  dpi = 1200
+  dpi = 300
 )
 
 # 3 Infer stillbirths ---------------------------------------------------------------------------------------------
@@ -432,11 +432,11 @@ ggsave(
     "output",
     "figure",
     "est_prevalence",
-    "3_stillbirths_main.pdf"
+    "3_stillbirths_main.tiff"
   ),
   width = 12,
   height = 9,
-  dpi = 1200
+  dpi = 300
 )
 
 # 4 Sensitivity analysis 1 ----------------------------------------------------------------------------------------
@@ -514,9 +514,9 @@ ggsave(
     "output",
     "figure",
     "est_prevalence",
-    "4_prevalence_yr_race_SA1.pdf"
+    "4_prevalence_yr_race_SA1.tiff"
   ),
   width = 12,
   height = 9,
-  dpi = 1200
+  dpi = 300
 )
