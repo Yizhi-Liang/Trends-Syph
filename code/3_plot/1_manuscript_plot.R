@@ -347,66 +347,7 @@ ggsave(
   dpi = 300
 )
 
-# 3 Infer stillbirths ---------------------------------------------------------------------------------------------
-
-stillbirth_plot = P_pregnant_yr |>
-  left_join(cs_cause_yr, by = "year") |>
-  rename(P = P_mean) |> 
-  mutate(across(P:CS_prop, ~ .x * 100000)) |>
-  ggplot(aes(x = year)) +
-  geom_point(aes(y = P, color = "Live births (Estimated)")) +
-  geom_point(aes(y = CS_prop, color = "Stillbirths")) +
-  geom_line(aes(y = P, color = "Live births (Estimated)", group = 1)) +
-  geom_line(aes(y = CS_prop, color = "Stillbirths", group = 1)) +
-  geom_linerange(aes(ymin = P_lower, ymax = P_upper, color = "Live births (Estimated)"),
-                 linewidth = 0.5) +
-  scale_y_continuous(limits = c(0, NA)) +
-  labs(x = "Year", y = "Syphilis prevalence per 100,000 women", color = NULL) +
-  theme(
-    legend.position = "bottom",
-    legend.justification = "center",
-    strip.background = element_rect(color = NULL, fill = NA),
-    axis.text.x = element_text(
-      size = size_fig - 2.5,
-      angle = 45,
-      hjust = 1,
-      vjust = 1
-    ),
-    axis.text.y = element_text(size = size_fig),
-    axis.title.x = element_text(size = size_fig),
-    axis.title.y = element_text(size = size_fig),
-    strip.text = element_text(size = size_fig),
-    legend.text = element_text(size = size_fig)
-  ) +
-  # scale_shape_manual(values = c(16, 4)) +
-  scale_color_manual(
-    values = c(
-      "Live births (Estimated)" = prevalence_color_main,
-      "Stillbirths" = "#5c005c"
-    ),
-    labels = c(
-      "Live births (Estimated)" = "Estimated prevalence among live births",
-      "Stillbirths" = "Prevalence based on reported stillbirths attributable to congenital syphilis among stillbirths"
-    )
-  ) +
-  guides(color = guide_legend(nrow = 2, byrow = TRUE))
-
-stillbirth_plot
-
-ggsave(
-  plot = stillbirth_plot,
-  filename = here(
-    "output",
-    "figure",
-    "est_prevalence",
-    "3_stillbirths_main.tiff"
-  ),
-  width = 12,
-  height = 9,
-  dpi = 300
-)
-
-# 4 Sensitivity analysis 1 ----------------------------------------------------------------------------------------
+# 3 Sensitivity analysis 1 ----------------------------------------------------------------------------------------
 
 fit_yr_race_SA1 = import(here("output", "stan_output", "2_SA1.rds")) |>
   as_tibble() |>
@@ -481,7 +422,67 @@ ggsave(
     "output",
     "figure",
     "est_prevalence",
-    "4_prevalence_yr_race_SA1.tiff"
+    "3_prevalence_yr_race_SA1.tiff"
+  ),
+  width = 12,
+  height = 9,
+  dpi = 300
+)
+
+
+# 4 Infer stillbirths ---------------------------------------------------------------------------------------------
+
+stillbirth_plot = P_pregnant_yr |>
+  left_join(cs_cause_yr, by = "year") |>
+  rename(P = P_mean) |> 
+  mutate(across(P:CS_prop, ~ .x * 100000)) |>
+  ggplot(aes(x = year)) +
+  geom_point(aes(y = P, color = "Live births (Estimated)")) +
+  geom_point(aes(y = CS_prop, color = "Stillbirths")) +
+  geom_line(aes(y = P, color = "Live births (Estimated)", group = 1)) +
+  geom_line(aes(y = CS_prop, color = "Stillbirths", group = 1)) +
+  geom_linerange(aes(ymin = P_lower, ymax = P_upper, color = "Live births (Estimated)"),
+                 linewidth = 0.5) +
+  scale_y_continuous(limits = c(0, NA)) +
+  labs(x = "Year", y = "Syphilis prevalence per 100,000 women", color = NULL) +
+  theme(
+    legend.position = "bottom",
+    legend.justification = "center",
+    strip.background = element_rect(color = NULL, fill = NA),
+    axis.text.x = element_text(
+      size = size_fig - 2.5,
+      angle = 45,
+      hjust = 1,
+      vjust = 1
+    ),
+    axis.text.y = element_text(size = size_fig),
+    axis.title.x = element_text(size = size_fig),
+    axis.title.y = element_text(size = size_fig),
+    strip.text = element_text(size = size_fig),
+    legend.text = element_text(size = size_fig)
+  ) +
+  # scale_shape_manual(values = c(16, 4)) +
+  scale_color_manual(
+    values = c(
+      "Live births (Estimated)" = prevalence_color_main,
+      "Stillbirths" = "#5c005c"
+    ),
+    labels = c(
+      "Live births (Estimated)" = "Estimated prevalence among live births",
+      "Stillbirths" = "Prevalence based on reported stillbirths attributable to congenital syphilis among stillbirths"
+    )
+  ) +
+  guides(color = guide_legend(nrow = 2, byrow = TRUE))
+
+stillbirth_plot
+
+ggsave(
+  plot = stillbirth_plot,
+  filename = here(
+    "output",
+    "figure",
+    "est_prevalence",
+    "4_stillbirths_main.tiff"
   ),
   width = 12,
   height = 9,
