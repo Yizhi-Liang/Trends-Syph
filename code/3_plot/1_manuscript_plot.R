@@ -204,6 +204,7 @@ pos_compare = positive_rate |>
     breaks = c("Estimated prevalence", "Birth certificate positivity")
   ) +
   facet_wrap(~ race, scales = "free") +
+  scale_y_continuous(limits = c(0, NA)) +
   labs(x = "Year", y = "Cases per 100,000 live births", color = NULL) +
   theme(
     legend.position = "bottom",
