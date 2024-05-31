@@ -139,35 +139,6 @@ cs_cause_yr <- import(here("data", "surveillance", "CS_stillbirth.csv")) |>
   mutate(CS_prop = cases / fetal_deaths) |>
   select(year, CS_prop)
 
-prevalence_yr = fit_yr_race |>
-  group_by(year, race) |>
-  summarise(
-    P_mean = mean(P),
-    P_lower = quantile(P, probs = 0.025),
-    P_upper = quantile(P, probs = 0.975)
-  ) |>
-  left_join(pregnancies_yr_race |>
-              select(year, race, live_births = Pop_mean),
-            by = c("year", "race")) |>
-  mutate(
-    numerator = P_mean * live_births,
-    lower_numerator = P_lower * live_births,
-    upper_numerator = P_upper * live_births
-  ) |>
-  summarise(
-    numerator = sum(numerator),
-    lower_numerator = sum(lower_numerator),
-    upper_numerator = sum(upper_numerator),
-    denominator = sum(live_births)
-  ) |>
-  mutate(
-    P = numerator / denominator,
-    P_lower = lower_numerator / denominator,
-    P_upper = upper_numerator / denominator
-  ) |>
-  select(year, P:P_upper)
-
-
 # 1 Estimated prevalence and observed positives -------------------------------------------------------------------
 
 pos_compare = positive_rate |>
@@ -378,8 +349,9 @@ ggsave(
 
 # 3 Infer stillbirths ---------------------------------------------------------------------------------------------
 
-stillbirth_plot = prevalence_yr |>
+stillbirth_plot = P_pregnant_yr |>
   left_join(cs_cause_yr, by = "year") |>
+  rename(P = P_mean) |> 
   mutate(across(P:CS_prop, ~ .x * 100000)) |>
   ggplot(aes(x = year)) +
   geom_point(aes(y = P, color = "Live births (Estimated)")) +
