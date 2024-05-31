@@ -229,15 +229,9 @@ pos_compare = positive_rate |>
 
 pos_compare
 
-# disparity index
-P_mean_yr <- fit_yr_race |>
-  group_by(year) |>
-  summarise(P_mean = mean(P)) |>
-  ungroup()
-
-## index calculation
+# index calculation
 index_df <- fit_yr_race |>
-  left_join(P_mean_yr, by = "year") |>
+  left_join(P_pregnant_yr, by = "year") |>
   select(year, race, P, .chain, .iteration, wt, P_mean) |>
   group_nest(year, .chain, .iteration) |>
   mutate(index = map_dbl(data, ~ {
@@ -266,7 +260,7 @@ disparity_index = index_df |>
     values = c("black" = "black"),
     labels = c("black" = "Index of disparity")
   ) +
-  scale_y_continuous(limits = c(0, 100)) +
+  scale_y_continuous(limits = c(0, NA)) +
   labs(x = NULL, y = NULL) +
   theme(
     axis.text.x = element_text(
