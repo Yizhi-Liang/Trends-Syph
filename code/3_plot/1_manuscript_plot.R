@@ -444,7 +444,7 @@ stillbirth_plot = P_pregnant_yr |>
   geom_linerange(aes(ymin = P_lower, ymax = P_upper, color = "Live births (Estimated)"),
                  linewidth = 0.5) +
   scale_y_continuous(limits = c(0, NA)) +
-  labs(x = "Year", y = "Syphilis prevalence per 100,000 women", color = NULL) +
+  labs(x = "Year", y = "Syphilis prevalence per 100,000 births", color = NULL) +
   theme(
     legend.position = "bottom",
     legend.justification = "center",
