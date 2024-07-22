@@ -1,5 +1,7 @@
-# Evolving trends in racial and ethnic disparities in syphilis prevalence among pregnant women in the United States from 2014 to 2022
-The data and code for paper title "Evolving trends in racial and ethnic disparities in syphilis prevalence among pregnant women in the United States from 2014 to 2022"
+# Trends in syphilis prevalence by race and ethnicity among people who are pregnant  in the United States 2014–2022.
+
+The data and code for paper title "Trends in syphilis prevalence by race and ethnicity among people who are pregnant  in the United States 2014–2022
+."
 
 The outline:
 
