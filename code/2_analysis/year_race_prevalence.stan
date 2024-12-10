@@ -5,7 +5,7 @@ data {
   int<lower=1, upper=n_year> year[n]; // Array of year for each observation
   int<lower=1> n_race; // Number of unique races
   int<lower=1, upper=n_race> race[n]; // Array of race for each observation
-  int<lower=0> Positivities[n]; // Number of positivities for each observation
+  int<lower=0> Detected[n]; // Number of Detected for each observation
   int<lower=0> Pop[n]; // Population for each observation
   real<lower=0> Test_alpha[n]; // Prior alpha for proportion tested for each observation
   real<lower=0> Test_beta[n]; // Prior beta for proportion tested for each observation
@@ -53,18 +53,18 @@ model {
   
   // Likelihood of the observed data given the model
   for (i in 1:n) {
-    Positivities[i] ~ binomial(Pop[i], theta[year[i], race[i]]);
+    Detected[i] ~ binomial(Pop[i], theta[year[i], race[i]]);
   }
   
 }
 
 generated quantities {
 
-  int<lower=0> pred_Positivities[n_year, n_race]; // Predicted number of positive tests for each year and race
+  int<lower=0> pred_Detected[n_year, n_race]; // Predicted number of positive tests for each year and race
 
   //  predictions
   for (i in 1:n) {
-    pred_Positivities[year[i], race[i]] = binomial_rng(Pop[i], theta[year[i], race[i]]);
+    pred_Detected[year[i], race[i]] = binomial_rng(Pop[i], theta[year[i], race[i]]);
   }
 
 }

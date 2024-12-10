@@ -119,7 +119,7 @@ test_prop1 |>
   export(here(
       "data",
       "parameter",
-      "3_prop_screened.csv"
+      "3_prop_screened_S1.csv"
   ))
 
 test_prop1 |> 
@@ -220,6 +220,6 @@ test_prop_race |>
   export(here(
     "data",
     "parameter",
-    "3_prop_screened_SA1.csv"
+    "3_prop_screened_S2.csv"
   ))
 

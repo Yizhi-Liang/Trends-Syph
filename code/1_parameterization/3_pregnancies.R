@@ -37,21 +37,21 @@ process_year <- function(year) {
 }
 
 # export each year
-lapply(2014:2022, process_year)
+lapply(2016:2023, process_year)
 
 # read each year's data
-read_parquet_year <- function(year) {
+read_single_year <- function(year) {
 
   file_name <- paste0("birth_", year, ".rds")
   file_path <- here("data", "natality", "selected", file_name)
   
   # Read the data
-  data <- import(file_path)
+  data <- import(file_path, trust = TRUE)
   
   return(data)
 }
 
-all_dat <- rbindlist(lapply(2014:2022, read_parquet_year))
+all_dat <- rbindlist(lapply(2016:2023, read_single_year))
 
 export(all_dat, here("data", "natality", "birth_all.rds"))
 
@@ -62,7 +62,7 @@ pacman::p_load(data.table, rio, here)
 
 full_data = as.data.table(import(here("data", 
                                       "natality", 
-                                      "birth_all.rds")))
+                                      "birth_all.rds"), trust = TRUE))
 
 ## year
 clean_dat <- copy(full_data)
@@ -111,7 +111,7 @@ clean_dat[, insurance := factor(
 )]
 
 ## birthplace
-clean_dat[, birthplace := case_when(
+clean_dat[, birthplace := dplyr::case_when(
   bfacil == 1 ~ "hospital",
   bfacil == 2 ~ "freestanding",
   bfacil == 3 ~ "home_intended",
@@ -199,8 +199,8 @@ pregnancies_yr_race = import(here("data", "natality", "birth_all_coded.rds")) |>
             by = c("year", "race")) |> 
   mutate(
     death_rate = 1000 * fetal_deaths / births,
-    death_rate = ifelse(year == 2022, death_rate[year==2021], death_rate),
-    fetal_deaths = ifelse(year == 2022, births*death_rate/1000, fetal_deaths),
+    death_rate = ifelse(year == 2023, death_rate[year==2022], death_rate),
+    fetal_deaths = ifelse(year == 2023, births*death_rate/1000, fetal_deaths),
     total = births + fetal_deaths
   ) |> 
   select(year, race, births, fetal_deaths, total)
@@ -212,7 +212,7 @@ pregnancies_yr_race |>
     "4_pregnancies.csv"
   ))
 
-import(here("data", "natality", "birth_all_coded.rds")) |> 
-  filter(insurance == "medicaid") |> 
-  group_by(year) |> 
-  summarise(births = n())
+# import(here("data", "natality", "birth_all_coded.rds")) |> 
+#   filter(insurance == "medicaid") |> 
+#   group_by(year) |> 
+#   summarise(births = n())

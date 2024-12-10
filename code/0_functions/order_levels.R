@@ -1,6 +1,6 @@
 order_levels <- function(df, categories) {
   # Define the order for 'year' and 'race'
-  year_order <- 2014:2022
+  year_order <- 2016:2023
   race_order <- c(
     "AIAN",
     "Asian",
